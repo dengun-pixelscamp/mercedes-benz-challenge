@@ -1,0 +1,511 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Smart Code - Pixels.Camp",
+		"_postman_id": "c8d5aec3-de7c-ce6d-ca91-9860693d25cc",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Vehicle",
+			"description": "",
+			"item": [
+				{
+					"name": "Get Vehicle Status",
+					"request": {
+						"url": {
+							"raw": "{{endpointUrl}}/vega/vehicles/{{vin}}?fields=batteryLevel,connection.connected,connection.since,doors.allClosed,doors.leftOpen,doors.locked,doors.rightOpen,doors.trunkOpen,engineOn,fuelLevel,geo.latitude,geo.longitude,ignitionOn,immobilizerEngaged,mileage,powerState,vin",
+							"host": [
+								"{{endpointUrl}}"
+							],
+							"path": [
+								"vega",
+								"vehicles",
+								"{{vin}}"
+							],
+							"query": [
+								{
+									"key": "fields",
+									"value": "batteryLevel,connection.connected,connection.since,doors.allClosed,doors.leftOpen,doors.locked,doors.rightOpen,doors.trunkOpen,engineOn,fuelLevel,geo.latitude,geo.longitude,ignitionOn,immobilizerEngaged,mileage,powerState,vin",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": [
+						{
+							"id": "7e4def5d-eab3-4ec3-ba85-7073b3496557",
+							"name": "Sample Response with all data",
+							"originalRequest": {
+								"url": {
+									"raw": "https://api.prod.smartservices.car2go.com/vega/vehicles/MOCKIAA01?fields=batteryLevel,connection.connected,connection.since,doors.allClosed,doors.leftOpen,doors.locked,doors.rightOpen,doors.trunkOpen,engineOn,fuelLevel,geo.latitude,geo.longitude,ignitionOn,immobilizerEngaged,mileage,powerState,vin",
+									"protocol": "https",
+									"host": [
+										"api",
+										"prod",
+										"smartservices",
+										"car2go",
+										"com"
+									],
+									"path": [
+										"vega",
+										"vehicles",
+										"MOCKIAA01"
+									],
+									"query": [
+										{
+											"key": "fields",
+											"value": "batteryLevel,connection.connected,connection.since,doors.allClosed,doors.leftOpen,doors.locked,doors.rightOpen,doors.trunkOpen,engineOn,fuelLevel,geo.latitude,geo.longitude,ignitionOn,immobilizerEngaged,mileage,powerState,vin",
+											"equals": true,
+											"description": ""
+										}
+									],
+									"variable": []
+								},
+								"method": "GET",
+								"header": [],
+								"body": {}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"_postman_previewtype": "text",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true",
+									"name": "Access-Control-Allow-Credentials",
+									"description": ""
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, Accept, X-Requested-With, remember-me",
+									"name": "Access-Control-Allow-Headers",
+									"description": ""
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "POST, GET, OPTIONS, DELETE, PUT, PATCH",
+									"name": "Access-Control-Allow-Methods",
+									"description": ""
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "3600",
+									"name": "Access-Control-Max-Age",
+									"description": ""
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache",
+									"name": "Cache-Control",
+									"description": ""
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=UTF-8",
+									"name": "Content-Type",
+									"description": ""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 21 Sep 2017 16:53:12 GMT",
+									"name": "Date",
+									"description": ""
+								},
+								{
+									"key": "Expires",
+									"value": "Thu, 01 Jan 1970 00:00:00 GMT",
+									"name": "Expires",
+									"description": ""
+								},
+								{
+									"key": "Pragma",
+									"value": "No-cache",
+									"name": "Pragma",
+									"description": ""
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked",
+									"name": "Transfer-Encoding",
+									"description": ""
+								},
+								{
+									"key": "X-Application-Context",
+									"value": "application:prodsmart,buildinfo:12020",
+									"name": "X-Application-Context",
+									"description": ""
+								}
+							],
+							"cookie": [],
+							"responseTime": 345,
+							"body": "{\"vin\":\"MOCKIAA01\",\"geo\":{\"latitude\":50.11111,\"longitude\":8.65065},\"batteryLevel\":12.3,\"connection\":{\"connected\":false,\"since\":\"2017-09-21T15:43:29.068Z\"},\"doors\":{\"leftOpen\":false,\"rightOpen\":false,\"trunkOpen\":false,\"locked\":false,\"allClosed\":true},\"engineOn\":false,\"immobilizerEngaged\":false,\"fuelLevel\":100,\"mileage\":200,\"powerState\":\"ON\"}"
+						}
+					]
+				},
+				{
+					"name": "Lock Door",
+					"request": {
+						"url": "{{endpointUrl}}/vega/vehicles/{{vin}}/doors/lock",
+						"method": "PUT",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Unlock Door",
+					"request": {
+						"url": "{{endpointUrl}}/vega/vehicles/{{vin}}/doors/unlock",
+						"method": "PUT",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Blink",
+					"request": {
+						"url": "{{endpointUrl}}/vega/vehicles/{{vin}}/blink",
+						"method": "PUT",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Engage immobilizer",
+					"request": {
+						"url": "{{endpointUrl}}/vega/vehicles/{{vin}}/immobilizer/engage",
+						"method": "PUT",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Disengage immobilizer",
+					"request": {
+						"url": "{{endpointUrl}}/vega/vehicles/{{vin}}/immobilizer/disengage",
+						"method": "PUT",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Activate livetracking",
+					"request": {
+						"url": "{{endpointUrl}}/vega/vehicles/{{vin}}/livetracking/activate",
+						"method": "PUT",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Deactivate live tracking",
+					"request": {
+						"url": "{{endpointUrl}}/vega/vehicles/{{vin}}/livetracking/deactivate",
+						"method": "PUT",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Geofence",
+			"description": "",
+			"item": [
+				{
+					"name": "Get geofence",
+					"request": {
+						"url": "{{endpointUrl}}/vega/vehicles/{{vin}}/geofences",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Create geofence",
+					"request": {
+						"url": "{{endpointUrl}}/vega/vehicles/{{vin}}/geofences",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"polygons\": [\n    {\n      \"points\": [\n        {\n          \"latitude\": 48.42143,\n          \"longitude\": 9.94168\n        },\n        {\n          \"latitude\": 48.42143,\n          \"longitude\": 9.94168\n        },\n        {\n          \"latitude\": 48.42143,\n          \"longitude\": 9.94168\n        }\n      ]\n    }\n  ]\n}"
+						},
+						"description": "Only one geofence supported this time"
+					},
+					"response": []
+				},
+				{
+					"name": "Update geofence",
+					"request": {
+						"url": "{{endpointUrl}}/vega/vehicles/{{vin}}/geofences/fb452b0a-9588-423f-8245-4694d2cb4ad6",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"polygons\": [\n    {\n      \"points\": [\n        {\n          \"latitude\": 38.706610,\n          \"longitude\": -9.145910\n        },\n        {\n          \"latitude\": 38.724224,\n          \"longitude\": -9.173526\n        },\n        {\n          \"latitude\": 38.728534,\n          \"longitude\": -9.130956\n        }\n      ]\n    }\n  ]\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Delete geofence",
+					"request": {
+						"url": "{{endpointUrl}}/vega/vehicles/{{vin}}/geofences/b42da78d-baa2-4bd5-a581-c29870ae59f5",
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Events",
+			"description": "",
+			"item": [
+				{
+					"name": "Get Status Change Events",
+					"request": {
+						"url": {
+							"raw": "{{endpointUrl}}/vega/events?cursor=1&vin=MOCKIAA01&type=statusChange&since=2017-09-22T00%3A00%3A00.000Z&limit=100",
+							"host": [
+								"{{endpointUrl}}"
+							],
+							"path": [
+								"vega",
+								"events"
+							],
+							"query": [
+								{
+									"key": "cursor",
+									"value": "1",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "vin",
+									"value": "MOCKIAA01",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "type",
+									"value": "statusChange",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "since",
+									"value": "2017-09-22T00%3A00%3A00.000Z",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "limit",
+									"value": "100",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get Geo Fence State Change",
+					"request": {
+						"url": {
+							"raw": "{{endpointUrl}}/vega/events?cursor=0&vin=MOCKIAA01&type=geoFenceStateChange&since=2017-09-22T00%3A00%3A00.000Z&limit=100",
+							"host": [
+								"{{endpointUrl}}"
+							],
+							"path": [
+								"vega",
+								"events"
+							],
+							"query": [
+								{
+									"key": "cursor",
+									"value": "0",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "vin",
+									"value": "MOCKIAA01",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "type",
+									"value": "geoFenceStateChange",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "since",
+									"value": "2017-09-22T00%3A00%3A00.000Z",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "limit",
+									"value": "100",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Service check",
+			"request": {
+				"url": "https://api.prod.smartservices.car2go.com/vega/service/check",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "Check communicate with server (connectivity, certificate, and so on)"
+			},
+			"response": [
+				{
+					"id": "a1c22229-8b1f-42df-89ed-9757b4f4fcd0",
+					"name": "Sample Success Response",
+					"originalRequest": {
+						"url": "https://api.prod.smartservices.car2go.com/vega/service/check",
+						"method": "GET",
+						"header": [],
+						"body": {}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true",
+							"name": "Access-Control-Allow-Credentials",
+							"description": "Indicates whether or not the response to the request can be exposed when the credentials flag is true. When used as part of a response to a preflight request, this indicates whether or not the actual request can be made using credentials."
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Accept, X-Requested-With, remember-me",
+							"name": "Access-Control-Allow-Headers",
+							"description": "Used in response to a preflight request to indicate which HTTP headers can be used when making the actual request."
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "POST, GET, OPTIONS, DELETE, PUT, PATCH",
+							"name": "Access-Control-Allow-Methods",
+							"description": "Specifies the method or methods allowed when accessing the resource. This is used in response to a preflight request."
+						},
+						{
+							"key": "Access-Control-Max-Age",
+							"value": "3600",
+							"name": "Access-Control-Max-Age",
+							"description": "Indicates how long the results of a preflight request can be cached in seconds."
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache",
+							"name": "Cache-Control",
+							"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 21 Sep 2017 16:53:23 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "Expires",
+							"value": "Thu, 01 Jan 1970 00:00:00 GMT",
+							"name": "Expires",
+							"description": "Gives the date/time after which the response is considered stale"
+						},
+						{
+							"key": "Pragma",
+							"value": "No-cache",
+							"name": "Pragma",
+							"description": "Implementation-specific headers that may have various effects anywhere along the request-response chain."
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked",
+							"name": "Transfer-Encoding",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						},
+						{
+							"key": "X-Application-Context",
+							"value": "application:prodsmart,buildinfo:12020",
+							"name": "X-Application-Context",
+							"description": "Custom header"
+						}
+					],
+					"cookie": [],
+					"responseTime": 111,
+					"body": "{\"certProperties\":{\"Subject CN\":\"iaa_01\"},\"result\":\"Certificate is valid and therefore you are able to communicate with the server.\"}"
+				}
+			]
+		}
+	]
+}

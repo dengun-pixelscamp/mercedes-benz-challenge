@@ -1,0 +1,22 @@
+{
+  "id": "6141eccd-9541-170f-f31c-a7610c9984a7",
+  "name": "Smart Services Mock",
+  "values": [
+    {
+      "enabled": true,
+      "key": "endpointUrl",
+      "value": "https://api.prod.smartservices.car2go.com",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "vin",
+      "value": "MOCKIAA01",
+      "type": "text"
+    }
+  ],
+  "timestamp": 1506073983573,
+  "_postman_variable_scope": "environment",
+  "_postman_exported_at": "2017-09-22T13:50:07.080Z",
+  "_postman_exported_using": "Postman/5.2.0"
+}
